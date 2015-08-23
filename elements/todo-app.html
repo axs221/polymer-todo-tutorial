@@ -1,0 +1,30 @@
+<head>
+    <link href="../bower_components/polymer/polymer.html" rel="import">
+    <link href="../elements/todo-element.html" rel="import">
+    <link href="../bower_components/paper-drawer-panel/paper-drawer-panel.html" rel="import">
+    <link href="../bower_components/paper-header-panel/paper-header-panel.html" rel="import">
+    <link href="../bower_components/paper-toolbar/paper-toolbar.html" rel="import">
+    <link href="../bower_components/paper-icon-button/paper-icon-button.html" rel="import">
+    <link href="../bower_components/paper-material/paper-material.html" rel="import">
+    <link href="../bower_components/paper-menu/paper-menu.html" rel="import"> 
+    <link href="../bower_components/paper-item/paper-item.html" rel="import">
+    <link href="../bower_components/paper-input/paper-input.html" rel="import">
+    <link href="../bower_components/iron-icons/iron-icons.html" rel="import">
+    ...
+</head>
+<dom-module id="todo-app">
+    <style> ... </style>
+    <template> 
+      <paper-menu class="list">
+          <template is="dom-if" if="{{!done.length}}">
+              <paper-material>
+                  <paper-item>Completed tasks will appear here!</paper-item>
+              </paper-material>
+          </template>
+          <template id="done" is="dom-repeat" items="{{done}}">
+              <paper-item>{{item.task}}<i style="margin-left: 5px;">{{item.user}}</i></paper-item>
+          </template>
+      </paper-menu>
+    </template>
+</dom-module>
+<script> ... </script>
